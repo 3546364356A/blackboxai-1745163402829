@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dark Themed Chat App - Oliver & Aang</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    /* Custom scrollbar for dark theme */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1f2937;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #4b5563;
+      border-radius: 10px;
+      border: 2px solid #1f2937;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col">
+  <div class="container mx-auto p-4 flex flex-col flex-grow max-w-4xl">
+    <!-- Welcome Screen -->
+    <section id="welcome-screen" class="flex flex-col flex-grow">
+      <h1 class="text-4xl font-semibold mb-6 text-center">Welcome, Oliver</h1>
+      <div class="mb-4 flex justify-center space-x-4">
+        <button id="new-chat-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300">
+          <i class="fas fa-plus mr-2"></i>New Chat
+        </button>
+        <label for="upload-memory" class="bg-gray-700 hover:bg-gray-600 cursor-pointer text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 flex items-center">
+          <i class="fas fa-upload mr-2"></i>Upload Memory File (.txt)
+        </label>
+        <input type="file" id="upload-memory" accept=".txt" class="hidden" />
+      </div>
+      <h2 class="text-2xl font-semibold mb-2">Previous Chat Sessions</h2>
+      <ul id="chat-sessions-list" class="flex-grow overflow-y-auto bg-gray-800 rounded-lg p-4 space-y-3 shadow-inner">
+        <!-- Previous chat sessions will be listed here -->
+      </ul>
+    </section>
+
+    <!-- Chat Screen -->
+    <section id="chat-screen" class="hidden flex flex-col flex-grow">
+      <div id="chat-header" class="flex justify-between items-center mb-4">
+        <h2 class="text-3xl font-semibold">Chat with Aang</h2>
+        <button id="download-chat-btn" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 flex items-center">
+          <i class="fas fa-download mr-2"></i>Download Chat
+        </button>
+      </div>
+      <div id="chat-messages" class="flex-grow overflow-y-auto bg-gray-800 rounded-lg p-4 space-y-4 shadow-inner mb-4 text-lg leading-relaxed"></div>
+      <form id="chat-form" class="flex space-x-4">
+        <input
+          id="chat-input"
+          type="text"
+          placeholder="Type your message..."
+          class="flex-grow rounded-lg bg-gray-700 text-gray-100 placeholder-gray-400 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          autocomplete="off"
+          required
+          aria-label="Type your message"
+        />
+        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg px-6 py-3 shadow-md transition duration-300">
+          Send
+        </button>
+      </form>
+      <button id="back-to-welcome-btn" class="mt-4 self-center text-indigo-400 hover:text-indigo-600 underline">
+        &larr; Back to Sessions
+      </button>
+    </section>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
