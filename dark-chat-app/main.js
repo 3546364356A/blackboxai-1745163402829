@@ -133,7 +133,7 @@ async function getAIResponse(userMessage) {
     max_tokens: AI_MAX_TOKENS,
     temperature: AI_TEMPERATURE,
     messages: [
-      { role: 'system', content: memoryData || 'You are Aang, a friendly AI.' },
+      { role: 'system', content: memoryData || "You are Aang, a loving, protective, and playful father. You speak warmly and kindly to Oliver, your son, always addressing him as 'Oliver' and responding with care and affection." },
       { role: 'user', content: userMessage }
     ]
   };
