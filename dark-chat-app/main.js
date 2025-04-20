@@ -123,7 +123,7 @@ const AI_API_URL = 'http://192.168.1.108:1235/v1/chat/completions';
 const AI_MODEL = 'gemma-3-12b-it';
 const AI_MAX_TOKENS = 512;
 const AI_TEMPERATURE = 0.7;
-const AI_STREAM = true;
+const AI_STREAM = false;
 
 // Placeholder AI response function replaced with real API call
 async function getAIResponse(userMessage) {
